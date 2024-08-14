@@ -1,0 +1,8 @@
+---
+- name: test execution ssm on ansible 
+  shell: "aws ssm send-command --document-name {{ document-name }}  --parameters {{ parameters }}  --targets {{ targets }}  --region {{  region }}"
+  register: cmd_result
+
+- name: Check aws result
+  debug:
+    msg: "{{ cmd_result }}"

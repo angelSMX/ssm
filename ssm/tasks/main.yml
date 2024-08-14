@@ -1,0 +1,3 @@
+---
+# tasks file for ssm
+- import_tasks: ssm_commands.yml
