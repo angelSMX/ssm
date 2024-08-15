@@ -1,6 +1,7 @@
 ---
 - name: test execution ssm on ansible 
-  shell: "/usr/local/bin/aws ssm send-command --document-name {{ document }}  --parameters {{ parameters }}  --targets {{ targets }}  --region {{  region }}"
+  sell:
+    cmd: "/usr/local/bin/aws ssm send-command --document-name {{ document }}  --parameters {{ parameters }}  --targets {{ targets }}  --region {{  region }}"
   register: cmd_result
 
 - name: Check aws result
