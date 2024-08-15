@@ -1,5 +1,7 @@
 ---
 - name: test execution ssm on ansible 
+  environment:
+    PATH: "{{ lookup('env', 'PATH') }}:/usr/local/bin/aws"
   shell: "aws ssm send-command --document-name {{ document }}  --parameters {{ parameters }}  --targets {{ targets }}  --region {{  region }}"
   register: cmd_result
 
