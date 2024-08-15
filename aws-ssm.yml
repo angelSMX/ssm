@@ -1,0 +1,4 @@
+- name: Execution ssm test to maven 
+  hosts: localhost
+  roles:
+    - ssm
