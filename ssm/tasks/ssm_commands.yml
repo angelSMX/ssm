@@ -3,7 +3,7 @@
   environment:
     PATH: "{{ lookup('env', 'PATH') }}:/usr/local/bin/aws"
   shell:
-    cmd: "/usr/local/bin/aws ssm send-command --document-name {{ document }}  --parameters {{ parameters }}  --targets {{ targets }}  --region {{  region }}"
+    cmd: "aws ssm send-command --document-name {{ document }}  --parameters {{ parameters }}  --targets {{ targets }}  --region {{  region }}"
   register: cmd_result
 
 - name: Check aws result
