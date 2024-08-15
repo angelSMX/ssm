@@ -1,4 +1,4 @@
 ---
 - name: test execution ssm on ansible 
   command: >
-    aws ssm send-command --document-name {{ document }}  --parameters 'commands=['"mkdir /home/angel/ansible-test"']'  --targets {{ targets }}  --region {{  region }} --output text
+    aws ssm send-command --document-name {{ document }}  --parameters 'commands=['"mkdir /home/angel/ansible-test"']'  --targets {{ targets }}  --region {{  region }} --output text --no-verify-ssl
