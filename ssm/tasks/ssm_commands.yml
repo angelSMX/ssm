@@ -1,12 +1,7 @@
 ---
 - name: test execution ssm on ansible 
-  environment:
-    AWS_CLI: "/usr/local/bin"
-  shell:
-    cmd: |
-      aws ssm send-command --document-name {{ document }}  --parameters {{ parameters }}  --targets {{ targets }}  --region {{  region }}
-  args:
-    executable: /bin/bash
+  scommand: >
+    aws ssm send-command --document-name {{ document }}  --parameters {{ parameters }}  --targets {{ targets }}  --region {{  region }}
   register: cmd_result
 
 - name: Check aws result
