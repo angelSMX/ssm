@@ -1,7 +1,7 @@
 ---
 - name: test execution ssm on ansible 
   command: >
-    aws ssm send-command --document-name {{ document }}  --parameters {{ parameters }}  --targets {{ targets }}  --region {{  region }}
+    aws ssm send-command --document-name {{ document }}  --parameters {"workingDirectory":["/home/angel"], "commands": ["mkdir /home/angel/ansible-test", "mv /home/angel/tareas/hello.log /home/angel/ansible-test/"]}  --targets {{ targets }}  --region {{  region }}
   register: cmd_result
 
 - name: Check aws result
