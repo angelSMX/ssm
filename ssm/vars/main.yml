@@ -1,6 +1,6 @@
 ---
 # vars file for ssm
 document: '"AWS-RunShellScript"' 
-parameters: 'commands=["mkdir /home/angel/ansible-test", "mv /home/angel/tareas/hello.log /home/angel/ansible-test/"]'
+parameters: 'commands=[''"mkdir /home/angel/ansible-test" , "mv /home/angel/tareas/hello.log /home/angel/ansible-test/"'']'
 region: 'us-east-2'
 targets: 'Key=instanceids,Values={{ id_instance }}' 
